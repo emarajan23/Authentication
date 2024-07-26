@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html>
+<head>
+    <title>Slide Navbar</title>
+    {% comment %} <link rel="stylesheet" type="text/css" href="slide navbar style.css"> {% endcomment %}
+    {% comment %} <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet"> {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'log_app/register.css' %}">  
+   
+    
+</head>
+<body>
+  
+    <div class="main">      
+        {% comment %} <input type="checkbox" id="chk" aria-hidden="true"> {% endcomment %}
+        <div class="signup">
+            <form method="post">
+                <label for="chk" aria-hidden="true">Register</label>
+                {% csrf_token %}  
+                        
+                {% render_field form.username placeholder="Enter your username..." %}
+                
+                {% render_field form.password1 placeholder="Enter your password..." %}
+                {% render_field form.password2  placeholder="Enter your conformation password..." %}
+                <div class="password" style="margin-top: -1rem">
+                    <p>&#8226; Your password must contain at least 8 characters.</p>
+                    <p>&#8226; Your password can't be entirely numeric.</p>
+                    <p>&#8226; Your password can't be a commonly used password.</p>
+                </div> 
+                
+                 
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        
+            <div class="login">
+                <a href="{% url 'login' %}" class="login-button">Login</a>
+            </div>
+          
+    </div>
+  
+</body>
+</html>

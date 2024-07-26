@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html>
+<head>
+    <title>Slide Navbar</title>
+    {% comment %} <link rel="stylesheet" type="text/css" href="slide navbar style.css"> {% endcomment %}
+    {% comment %} <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet"> {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'log_app/login.css' %}"> 
+
+</head>
+{% comment %} <body>
+  
+    {% comment %} <div class="main">      
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form method="post">
+                {% csrf_token %}
+                <label for="chk" aria-hidden="true">Register</label>
+                {{ form.username}}
+                {{ form.password1}}
+                {{ form.password2}}
+                <button type="submit">Register</button>
+            </form>
+        </div> {% endcomment %}
+
+        {% comment %} <div>
+            <form method="post">
+                {% csrf_token %}
+                <label for="chk" aria-hidden="true">Login</label>
+                {% render_field form.username placeholder="Enter your username..." %}
+                {% render_field form.password placeholder="Enter your password..." %}
+                <button type="submit">Login</button>
+            </form>
+        </div>   
+    </div>  {% endcomment %}
+  
+{% comment %} </body> {% endcomment %}
+<body>
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+                <h1 class="opacity">LOGIN</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {% render_field form.username placeholder="Enter your username..." %}
+                    {% render_field form.password placeholder="Enter your password..." %}
+                    <button type="submit">Login</button>
+                </form>
+                <div class="register-forget opacity">
+                    <a href="{% url 'register' %}">REGISTER</a>
+                    <a href="">FORGOT PASSWORD</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+</body>
+</html>

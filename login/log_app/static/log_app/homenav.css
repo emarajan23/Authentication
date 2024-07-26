@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: dodgerblue;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: white;
+    color: black;
+  }
+ 
+  
+  .split{
+    float: right;
+    background-color: #04AA6D;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    
+  }  
+  .split:hover {
+    background-color:red; 
+  }
+
+  
+
+
+/* Vibrant and Fun Design */
+.welcome-card.vibrant {
+  background: #ffcc00; /* Bright background color */
+  color: #333; /* Dark text color for contrast */
+  border-radius: 12px; /* Rounded corners */
+  padding: 25px; /* Generous padding */
+  max-width: 380px; /* Max width of the card */
+  height:8rem;
+  margin: 110px auto; /* Centered with space around */
+  font-family: 'Comic Sans MS', cursive; /* Fun font */
+}
+
+.welcome-card.vibrant .welcome-card-header {
+  border-bottom: 3px solid #ff9900; /* Bold bottom border */
+  padding-bottom: 15px; /* Space below the header text */
+}
+
+.welcome-card.vibrant h1 {
+  font-size: 26px; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  margin: 0; /* Remove default margin */
+}
+
+.welcome-card.vibrant .welcome-card-body p {
+  font-size: 16px; /* Font size for paragraphs */
+  margin: 0 0 12px; /* Space between paragraphs */
+}
+
+
+
+  

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Devices</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'log_app/device.css' %}"> 
+    
+</head>
+<body style="background-color: #DEB992;">
+    <div style="display: flex; flex-wrap: wrap;">
+        {% for device in devices %}
+        <div class="card">
+            <div class="badge">New Product</div>
+            <div class="product-thumb">
+                <img src="{{ device.image.url }}" alt="{{ device.brand }} {{ device.model }}">
+            </div>
+            <div class="product-details">
+                <span class="product-category">{{ device.category }}</span>
+                <h4><a href="#"> {{ device.model }}</a></h4>
+                <p>{{ device.description }}</p>
+                <ul class="specs-list">
+                    <li><strong>Operating System:</strong> {{ device.os }}</li>
+                    <li><strong>Display Size:</strong> {{ device.display_size }}"</li>
+                    <li><strong>RAM:</strong> {{ device.ram }} GB</li>
+                    <li><strong>Storage:</strong> {{ device.storage }} GB</li>
+                    <li><strong>Battery Capacity:</strong> {{ device.battery_capacity }} mAh</li>
+                    <li><strong>Main Camera:</strong> {{ device.main_camera }} MP</li>
+                    <li><strong>Front Camera:</strong> {{ device.front_camera }} MP</li>
+                </ul>
+                <div class="product-bottom-details">
+                    <div class="product-price"><small>${{ device.previous_price }}</small>${{ device.current_price }}</div>
+                    <div class="product-links">
+                        <a href="#"><i class="fa fa-heart"></i></a>
+                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

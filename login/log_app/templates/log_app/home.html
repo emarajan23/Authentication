@@ -1,0 +1,46 @@
+<html>
+    {% load static %}
+ <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'log_app/homenav.css' %}"> 
+ </head>
+ <body style="background-color:orange">
+
+  <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="{% url 'device_list' %}">Products</a>
+      <a href="{% static 'log_app/pdf/ema03.pdf' %}">Contact Developer</a>
+      
+      <div>
+          <!-- Other navigation links -->
+          {% if user.is_authenticated %}
+              <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="split">Logout</button>
+              </form>
+          {% else %}
+              <a href="{% url 'login' %}" class="split">Login</a>
+          {% endif %}
+      </div>
+  </div>
+  
+<div>
+    {% if user.is_authenticated %}
+    <div class="welcome-card vibrant">
+        <div class="welcome-card-header">
+            <h1>Welcome, {{ user.username }}!</h1>
+        </div>
+        <div class="welcome-card-body">
+            <p>We are excited to have you back!</p>
+            <p>Explore our site and enjoy your stay.</p>
+        </div>
+    </div>
+{% endif %}
+
+   
+</div> 
+    
+
+
+</body>
+
+</html>
